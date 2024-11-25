@@ -1,60 +1,56 @@
-import { StyleSheet, Switch, Text, View } from "react-native"
+import { StyleSheet, Switch, Text, View, TouchableOpacity } from "react-native"
 import styles from "./styles"; 
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import { Gyroscope, GyroscopeMeasurement } from 'expo-sensors'
+import { Link } from "expo-router"; 
 
 type CardProps = {
     title: string;
     description: string;
+    href: string;
+    icon: ReactNode;
 };
 
-const Card: React.FC<CardProps> = ({ title, description }) => {
+const Card: React.FC<CardProps> = ({ title, description, icon, href }) => {
 
     const [gyroData, setGyroData] = useState({x:0, y:0, z:0})
-    const [gyroEnabled, setGyroEnabled] = useState(false)
 
     useEffect(() => {
         let subscription: { remove: () => void } | undefined;
     
-        if (gyroEnabled) {
-          subscription = Gyroscope.addListener((gyroscopeData: GyroscopeMeasurement) => {
+        subscription = Gyroscope.addListener((gyroscopeData: GyroscopeMeasurement) => {
             setGyroData({
               x: gyroscopeData.x || 0,
               y: gyroscopeData.y || 0,
               z: gyroscopeData.z || 0,
             });
           });
-        } else {
-          subscription?.remove();
-        }
     
         return () => {
-          subscription?.remove();
+          subscription.remove();
         };
-      }, [gyroEnabled]);
-
-      const handleGyroToggle = () => {
-        setGyroEnabled(!gyroEnabled)
-      }
+      }, []);
 
     return (
-        <View style={[
-            styles.cardContainer, 
-            {
-              transform: [
-                { translateX: gyroData.y * 1 },
-                { translateY: -gyroData.x * 1 },
-              ],
-            }
-          ]}
-          >
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
-            <Switch 
-                thumbColor={gyroEnabled? 'green' : 'red'}
-                onValueChange={handleGyroToggle}
-            ></Switch>
-        </View>
+      <Link href={href} asChild>
+        <TouchableOpacity activeOpacity={0.8}>
+                <View
+                    style={[
+                        styles.cardContainer,
+                        {
+                            transform: [
+                                { translateX: gyroData.y * 1 },
+                                { translateY: -gyroData.x * 2 },
+                            ],
+                        },
+                    ]}
+                >
+                    <View>{icon}</View>
+                    <Text style={styles.title}>{title}</Text>
+                    <Text style={styles.description}>{description}</Text>
+                </View>
+            </TouchableOpacity>
+      </Link>
     );
 };
 

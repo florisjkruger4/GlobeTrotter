@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-// Card Style Sheet
+// Top Banner Style Sheet
 
 export default StyleSheet.create({
   topBanner: {

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native"
 import styles from "./styles"; 
 
-const TopBanner = () => {
+const BottomBanner = () => {
 
     return (
         <View style={styles.bottomBanner}>
@@ -10,4 +10,4 @@ const TopBanner = () => {
     );
 };
 
-export default TopBanner;
+export default BottomBanner;
