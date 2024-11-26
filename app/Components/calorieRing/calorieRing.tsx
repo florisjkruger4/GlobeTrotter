@@ -4,6 +4,7 @@ import SVG, { Circle } from 'react-native-svg'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 import Animated, { useAnimatedProps, useSharedValue, withTiming } from 'react-native-reanimated'
 import { useEffect } from "react"
+import colors from "../../UniversalStyles/colors"
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -37,7 +38,7 @@ const CalorieRing = ({ radius, strokeWidth, progress }: CalorieRingProps) => {
                     r={innerRadius} 
                     fill="none"
                     strokeWidth={strokeWidth}
-                    stroke='#37FF8B'
+                    stroke={colors.accent}
                     opacity={0.2}
                 />
                 <AnimatedCircle
@@ -47,7 +48,7 @@ const CalorieRing = ({ radius, strokeWidth, progress }: CalorieRingProps) => {
                     r={innerRadius} 
                     fill="none"
                     strokeWidth={strokeWidth}
-                    stroke='#37FF8B'
+                    stroke={colors.accent}
                     strokeLinecap="round"
                     rotation="-90"
                     originX={radius}

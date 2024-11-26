@@ -9,6 +9,7 @@ import Header from "../../Components/header/header";
 import TopBanner from "../../Components/topBanner/topBanner";
 import BottomBanner from "../../Components/bottomBanner/bottomBanner";
 import CalorieRing from "../../Components/calorieRing/calorieRing";
+import colors from "../../UniversalStyles/colors";
 
 const HomePage = () => {
     return (
@@ -56,7 +57,7 @@ const HomePage = () => {
                             icon={<FontAwesome5 name="fire" style={styles.icons} />}
                             href="/Calories"
                             content={<CalorieRing radius={75} strokeWidth={25} progress={0.85}/>}
-                            />
+                        />
                         <Card 
                             title="Globe" 
                             description="A much longer description for card 5 that will dynamically expand the card's height to fit its content." 

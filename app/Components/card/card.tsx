@@ -40,8 +40,8 @@ const Card: React.FC<CardProps> = ({ title, description, icon, href, content }) 
                         styles.cardContainer,
                         {
                             transform: [
-                                { translateX: gyroData.y * 1 },
-                                { translateY: -gyroData.x * 2 },
+                                { translateX: gyroData.y * 2 },
+                                { translateY: -gyroData.x * 3 },
                             ],
                         },
                     ]}

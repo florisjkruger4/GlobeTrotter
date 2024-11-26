@@ -4,7 +4,7 @@ import { View } from "react-native";
 const RootPage = () => {
     return (
         <View>
-            <Redirect href="/Home" />
+            <Redirect href="/Register" />
         </View>
     );
 };

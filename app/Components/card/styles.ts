@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../UniversalStyles/colors';
 
 // Card Style Sheet
 
@@ -7,7 +8,7 @@ export default StyleSheet.create({
     marginBottom: 10,
     marginTop: 10,
     padding: 10, 
-    backgroundColor: 'white',
+    backgroundColor: colors.base,
     borderRadius: 25,
     shadowColor: '#000', // Shadow settings for React Native (iOS/Android)
     shadowOffset: { width: 0, height: 0.5 },
@@ -21,7 +22,7 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    color: 'gray',
+    color: colors.secondary,
     fontFamily: 'Open Sans'
   },
   description: {

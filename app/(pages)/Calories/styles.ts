@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../UniversalStyles/colors';
 
 // Workouts Page Style Sheet
 
@@ -10,13 +11,13 @@ export default StyleSheet.create({
         flex: 6,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f6f8fc',
+        backgroundColor: colors.primary,
     },
     container: {
         flex: 75,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f6f8fc',
+        backgroundColor: colors.primary,
         //borderColor: 'red',
         //borderWidth: 1,
     },

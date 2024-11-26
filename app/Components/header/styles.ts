@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../UniversalStyles/colors';
 
 // Card Style Sheet
 
@@ -12,6 +13,7 @@ export default StyleSheet.create({
   },
   greeting: {
     fontSize: 20,
+    color: colors.secondary,
     fontFamily: 'Open Sans'
   },
   profilePicContainer: {
