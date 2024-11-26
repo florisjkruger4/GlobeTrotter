@@ -10,7 +10,10 @@ const PagesLayout = () => {
                 name="Home" 
             />
             <Stack.Screen 
-                name="Workouts" 
+                name="Runs" 
+            />
+            <Stack.Screen 
+                name="Calories" 
             />
         </Stack>
     );

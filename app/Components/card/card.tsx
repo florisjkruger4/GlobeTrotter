@@ -7,11 +7,12 @@ import { Link } from "expo-router";
 type CardProps = {
     title: string;
     description: string;
-    href: string;
     icon: ReactNode;
+    href: string;
+    content: ReactNode;
 };
 
-const Card: React.FC<CardProps> = ({ title, description, icon, href }) => {
+const Card: React.FC<CardProps> = ({ title, description, icon, href, content }) => {
 
     const [gyroData, setGyroData] = useState({x:0, y:0, z:0})
 
@@ -45,9 +46,12 @@ const Card: React.FC<CardProps> = ({ title, description, icon, href }) => {
                         },
                     ]}
                 >
-                    <View>{icon}</View>
+                  <View style={styles.titleContainer}>
                     <Text style={styles.title}>{title}</Text>
-                    <Text style={styles.description}>{description}</Text>
+                    {icon}
+                  </View>
+                  <Text style={styles.description}>{description}</Text>
+                  {content}
                 </View>
             </TouchableOpacity>
       </Link>

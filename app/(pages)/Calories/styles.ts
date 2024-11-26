@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-// Home Page Style Sheet
+// Workouts Page Style Sheet
 
 export default StyleSheet.create({
     outer: {
@@ -19,22 +19,5 @@ export default StyleSheet.create({
         backgroundColor: '#f6f8fc',
         //borderColor: 'red',
         //borderWidth: 1,
-    },
-    cardsContainer: {
-        flexDirection: 'row',
-        width: '85%',
-        //borderColor: 'black',
-        //borderWidth: 1,
-    },
-    cardsContainerColumn: {
-        padding: 5,
-        flex:50,
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-    },
-    icons: {
-        fontSize: 18,
-        color: 'gray'
     },
 });

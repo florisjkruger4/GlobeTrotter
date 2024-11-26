@@ -15,6 +15,10 @@ export default StyleSheet.create({
     shadowRadius: 2,
     elevation: 1, // Android-specific shadow
   },
+  titleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
   title: {
     fontSize: 16,
     color: 'gray',

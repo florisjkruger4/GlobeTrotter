@@ -10,7 +10,7 @@ const WorkoutsPage = () => {
     return (
         <View style={styles.outer}>
             <TopBanner></TopBanner>
-                <Text>Workouts Page</Text>
+                <Text>Runs Page</Text>
             <BottomBanner></BottomBanner>
         </View>
     );
