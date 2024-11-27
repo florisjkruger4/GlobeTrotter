@@ -16,9 +16,9 @@ const RegisterPage = () => {
 
     const handleRegister = async () => {
         try {
-            console.log("Attempting API call with: " + formData)
-            const response = await axios.post("http://127.0.0.1:8000/api/accounts/register/", formData);
-            console.log("SUCCESS!!!")
+            console.log("FormData being sent:", formData);
+            const response = await axios.post("http://192.168.1.186:8000/api/accounts/register/", formData);
+            console.log("Response received:", response.data);
             console.log(response.data); // Handle success
         } catch (err: any) {
             setError(err.response?.data || "An error occurred"); // Handle error
